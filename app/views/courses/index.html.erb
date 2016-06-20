@@ -1,0 +1,17 @@
+<% if !user_signed_in? %>
+  <div  class="jumbotron">
+    <h1>NUS Courses-sharing blogs listed</h1>
+    <p>Become a user and you can add your course!</p>
+    <p><%= link_to "Sign Up To Post for your course", new_user_registration_path, class: "btn btn-primary btn-lg" %></p>
+  </div>
+<% end %>
+
+<div class="row">
+  <% @courses.each do |course| %>
+    <div class="col-sm-6 col-md-3">
+      <div class="thumbnail">
+        <%= link_to (image_tag course.image.url(:medium), class: 'image'), course %>
+      </div>
+    </div>
+  <% end %>
+</div>

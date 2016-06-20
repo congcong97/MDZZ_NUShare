@@ -1,0 +1,9 @@
+<div class="row">
+  <% @courses.each do |course| %>
+    <div class="col-sm-6 col-md-3">
+      <div class="thumbnail">
+        <%= link_to (image_tag course.image.url(:medium), class: 'image'), course %>
+      </div>
+    </div>
+  <% end %>
+</div>
